@@ -1,6 +1,6 @@
 // actions
 import randomWords from 'random-words';
-import { GEN_WORDS, ADD_WORDS, WordActionTypes } from './types';
+import { ADD_WORDS, WordActionTypes } from './types';
 
 export function generateWords(count: number): WordActionTypes {
   const genWords = randomWords(count)
