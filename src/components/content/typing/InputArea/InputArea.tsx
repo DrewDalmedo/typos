@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { generateWords } from '../../../../store/words/actions';
+import { WordsState } from '../../../../store/words/reducer';
 
 const InputArea = () => {
 
   const [userInput, setUserInput] = useState('');
 
   const dispatch = useDispatch();
+  const wordCount = useSelector( (state: WordsState) => state.length )
 
   const handleInputChange = (event: any) => {
     const currentText: string = event.target.value;
@@ -20,7 +22,7 @@ const InputArea = () => {
   }
 
   const handleRedoClick = (event: any) => {
-    dispatch(generateWords(25))
+    dispatch(generateWords(wordCount))
   }
 
   return (
