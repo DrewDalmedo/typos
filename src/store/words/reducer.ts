@@ -1,4 +1,3 @@
-import { Reducer } from 'react';
 import { GEN_WORDS, ADD_WORDS } from './types';
 
 export interface WordsState {
