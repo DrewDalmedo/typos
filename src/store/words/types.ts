@@ -10,7 +10,7 @@ interface AddWordsAction {
 
 interface IncrementCurrentWordAction {
   type: typeof INC_CURRENT_WORD,
-  payload: void
+  payload: string 
 }
 
 export type WordActionTypes = AddWordsAction | IncrementCurrentWordAction
