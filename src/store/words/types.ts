@@ -1,5 +1,7 @@
 // words
 export const ADD_WORDS: string = "ADD_WORDS"
+export const INC_CURRENT_WORD: string = "INC_CURRENT_WORD"
+export const INC_CORRECT: string = "INC_CORRECT"
 
 interface AddWordsAction {
   type: typeof ADD_WORDS,
