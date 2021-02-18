@@ -1,4 +1,4 @@
-import { ADD_WORDS, WordActionTypes } from './types';
+import { ADD_WORDS, INC_CURRENT_WORD, WordActionTypes } from './types';
 
 export interface WordsState {
   words: string[]
@@ -23,6 +23,14 @@ export default function wordsReducer(
       return {
         ...state,
         words: action.payload,
+        length: action.payload.length,
+        currentWordIndex: 0,
+        correct: 0,
+      }
+    case INC_CURRENT_WORD:
+      return {
+        ...state,
+        currentWordIndex: state.currentWordIndex + 1
       }
     default:
       return state
