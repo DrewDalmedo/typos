@@ -14,7 +14,7 @@ const Bar = () => {
   }
 
   return (
-    <div>
+    <div className="bar">
       <WordCount changeWordCount={changeWordCount} />
       <Stats />
     </div>
