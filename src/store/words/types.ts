@@ -8,4 +8,9 @@ interface AddWordsAction {
   payload: string | string[]
 }
 
-export type WordActionTypes = AddWordsAction
+interface IncrementCurrentWordAction {
+  type: typeof INC_CURRENT_WORD,
+  payload: void
+}
+
+export type WordActionTypes = AddWordsAction | IncrementCurrentWordAction
