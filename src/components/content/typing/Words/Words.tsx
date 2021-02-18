@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch, connect } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux'
 import { WordsState } from "../../../../store/words/reducer";
 
 const Words = () => {
