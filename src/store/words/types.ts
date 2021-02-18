@@ -13,4 +13,9 @@ interface IncrementCurrentWordAction {
   payload: string 
 }
 
-export type WordActionTypes = AddWordsAction | IncrementCurrentWordAction
+interface IncrementCorrectAction {
+  type: typeof INC_CORRECT,
+  payload: string
+}
+
+export type WordActionTypes = AddWordsAction | IncrementCurrentWordAction | IncrementCorrectAction
