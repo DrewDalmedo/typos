@@ -1,6 +1,6 @@
 // actions
 import randomWords from 'random-words';
-import { ADD_WORDS, INC_CURRENT_WORD, WordActionTypes } from './types';
+import { ADD_WORDS, INC_CURRENT_WORD, INC_CORRECT, WordActionTypes } from './types';
 
 export function generateWords(count: number): WordActionTypes {
   const genWords = randomWords(count)
@@ -18,5 +18,12 @@ export function incrementCurrentWord(): WordActionTypes {
   return {
     type: INC_CURRENT_WORD,
     payload: [] 
+  }
+}
+
+export function incrementCorrect(): WordActionTypes {
+  return {
+    type: INC_CORRECT,
+    payload: []
   }
 }
