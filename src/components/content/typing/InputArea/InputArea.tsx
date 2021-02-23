@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { generateWords } from '../../../../store/words/actions';
 import { WordsState } from '../../../../store/words/reducer';
 
-const InputArea = () => {
+interface InputAreaProps {
+  handleUserSubmission: (submission:string) => void
+}
+
+const InputArea = (props: InputAreaProps) => {
 
   const [userInput, setUserInput] = useState('');
 
@@ -13,7 +17,10 @@ const InputArea = () => {
   const handleInputChange = (event: any) => {
     const currentText: string = event.target.value;
 
+    // treat a space as a submission
     if (currentText[currentText.length - 1] === ' ') {
+      // send user input to our callback
+      props.handleUserSubmission(userInput)
       setUserInput('')
     }
     else {
