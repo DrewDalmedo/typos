@@ -2,21 +2,22 @@
 import React from 'react';
 
 interface WPMProps {
-  wpm?: number
+  wpm?:string 
 }
 
 interface AccuracyProps {
-  acc?: number
+  acc?:string 
 }
 
 interface StatsProps {
-
+  wpm?: string,
+  accuracy?: string,
 }
 
 const WPM = (props: WPMProps) => {
   return (
     <>
-      <span>{props.wpm ? `${props.wpm}` : '--'} WPM</span>
+      <span>{props.wpm ? props.wpm : '--'} WPM</span>
     </>
   );
 }
@@ -24,7 +25,7 @@ const WPM = (props: WPMProps) => {
 const Accuracy = (props: AccuracyProps) => {
   return (
     <>
-      <span>{props.acc ? `${props.acc}` : '--'}% Accuracy</span>
+      <span>{props.acc ? props.acc : '--'}% Accuracy</span>
     </>
   );
 }
@@ -32,7 +33,7 @@ const Accuracy = (props: AccuracyProps) => {
 const Stats = (props: StatsProps) => {
   return (
     <div>
-      <WPM wpm={1} /> / <Accuracy acc={100}/>
+      <WPM wpm={props.wpm} /> / <Accuracy acc={props.accuracy} />
     </div>
   );
 }
