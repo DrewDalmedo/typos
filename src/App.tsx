@@ -8,9 +8,12 @@ import Content from './components/content/Content';
 import { useDispatch } from 'react-redux';
 import { generateWords } from './store/words/actions';
 
+// misc
+import { DEFAULT_WORD_COUNT } from './defaults';
+
 const App = () => {
   const dispatch = useDispatch();
-  dispatch(generateWords(25))
+  dispatch(generateWords(DEFAULT_WORD_COUNT))
 
   return (
       <div>
