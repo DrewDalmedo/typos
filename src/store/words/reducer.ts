@@ -1,10 +1,12 @@
-import { ADD_WORDS, INC_CORRECT, INC_CURRENT_WORD, WordActionTypes } from './types';
+import { ADD_WORDS, CALC_ACC, CALC_WPM, INC_CORRECT, INC_CURRENT_WORD, WordActionTypes } from './types';
 
 export interface WordsState {
   words: string[]
   length: number,
   currentWordIndex: number,
   correct: number,
+  WPM: string,
+  accuracy: string,
 }
 
 const initialState: WordsState = {
@@ -12,6 +14,8 @@ const initialState: WordsState = {
   length: 0,
   currentWordIndex: 0,
   correct: 0,
+  WPM: '--',
+  accuracy: '--'
 }
 
 export default function wordsReducer(
@@ -26,6 +30,8 @@ export default function wordsReducer(
         length: action.payload.length,
         currentWordIndex: 0,
         correct: 0,
+        WPM: '--',
+        accuracy: '--',
       }
     case INC_CURRENT_WORD:
       return {
@@ -36,6 +42,16 @@ export default function wordsReducer(
       return {
         ...state,
         correct: state.correct + 1
+      }
+    case CALC_WPM:
+      return {
+        ...state,
+        WPM: action.payload
+      }
+    case CALC_ACC:
+      return {
+        ...state,
+        accuracy: action.payload
       }
     default:
       return state
