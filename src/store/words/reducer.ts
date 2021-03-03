@@ -1,4 +1,4 @@
-import { ADD_WORDS, CALC_ACC, CALC_WPM, INC_CORRECT, INC_CURRENT_WORD, WordActionTypes } from './types';
+import { ADD_WORDS, CALC_ACC, CALC_WPM, END_TIMER, INC_CORRECT, INC_CURRENT_WORD, START_TIMER, WordActionTypes } from './types';
 
 export interface WordsState {
   words: string[]
@@ -55,6 +55,16 @@ export default function wordsReducer(
       return {
         ...state,
         accuracy: action.payload
+      }
+    case START_TIMER:
+      return {
+        ...state,
+        timerStart: action.payload
+      }
+    case END_TIMER:
+      return {
+        ...state,
+        timerEnd: action.payload
       }
     default:
       return state
