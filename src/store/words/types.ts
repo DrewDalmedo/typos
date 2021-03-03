@@ -4,30 +4,13 @@ export const INC_CURRENT_WORD: string = "INC_CURRENT_WORD"
 export const INC_CORRECT: string = "INC_CORRECT"
 export const CALC_WPM: string = "CALC_WPM"
 export const CALC_ACC: string = "CALC_ACC"
+export const START_TIMER: string = "START_TIMER"
+export const END_TIMER: string = "END_TIMER"
 
-interface AddWordsAction {
-  type: typeof ADD_WORDS,
-  payload: string | string[]
+// let's try this...
+interface StandardAction {
+  type: string,
+  payload: string | string[] | Date
 }
 
-interface IncrementCurrentWordAction {
-  type: typeof INC_CURRENT_WORD,
-  payload: string 
-}
-
-interface IncrementCorrectAction {
-  type: typeof INC_CORRECT,
-  payload: string
-}
-
-interface CalculateWPMAction {
-  type: typeof CALC_WPM,
-  payload: string 
-}
-
-interface CalculateAccuracyAction {
-  type: typeof CALC_ACC,
-  payload: string 
-}
-
-export type WordActionTypes = AddWordsAction | IncrementCurrentWordAction | IncrementCorrectAction | CalculateWPMAction | CalculateAccuracyAction
+export type WordActionTypes = StandardAction
