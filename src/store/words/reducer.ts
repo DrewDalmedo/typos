@@ -6,6 +6,8 @@ export interface WordsState {
   currentWordIndex: number,
   correct: number,
   WPM: string,
+  timerStart: Date | undefined,
+  timerEnd: Date | undefined,
   accuracy: string,
 }
 
@@ -15,7 +17,9 @@ const initialState: WordsState = {
   currentWordIndex: 0,
   correct: 0,
   WPM: '--',
-  accuracy: '--'
+  timerStart: undefined,
+  timerEnd: undefined,
+  accuracy: '--',
 }
 
 export default function wordsReducer(
@@ -27,7 +31,6 @@ export default function wordsReducer(
       return {
         ...state,
         words: action.payload,
-        length: action.payload.length,
         currentWordIndex: 0,
         correct: 0,
         WPM: '--',
