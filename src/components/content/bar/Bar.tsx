@@ -10,6 +10,7 @@ import WordCount from './WordCount';
 const Bar = () => {
   const dispatch = useDispatch()
   const accuracy = useSelector( (state: WordsState) => state.accuracy )
+  const wpm = useSelector( (state: WordsState) => state.WPM );
 
   const changeWordCount = (count:number) => {
     dispatch(generateWords(count));
@@ -18,7 +19,7 @@ const Bar = () => {
   return (
     <div className="bar">
       <WordCount changeWordCount={changeWordCount} />
-      <Stats accuracy={accuracy}/>
+      <Stats accuracy={accuracy} wpm={wpm} />
     </div>
   );
 };
