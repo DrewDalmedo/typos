@@ -21,7 +21,7 @@ const Content = () => {
     // prevent oob error by checking if the currentWordIndex isn't greater or equal to the length of words
     if (!(currentWordIndex >= words.length)) {
       const currentWord = words[currentWordIndex]
-      // useSelector only updates on rerender, which means if we increment correct inside this function, the correct var outside of this scope won't be updated until the function is done running
+      // useSelector only updates on rerender, which means if we increment correct inside this function, the correct var outside of this scope won't be updated until the function is done running, so we set a local var which can be updated if the current word is correct
       let localCorrect = correct;
 
       if (submission === currentWord) {
