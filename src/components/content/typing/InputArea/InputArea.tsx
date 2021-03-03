@@ -12,7 +12,7 @@ const InputArea = (props: InputAreaProps) => {
   const [userInput, setUserInput] = useState('');
 
   const dispatch = useDispatch();
-  const wordCount = useSelector( (state: WordsState) => state.length )
+  const wordCount = useSelector( (state: WordsState) => state.words.length )
 
   const handleInputChange = (event: any) => {
     const currentText: string = event.target.value;
