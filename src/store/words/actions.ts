@@ -1,6 +1,6 @@
 // actions
 import randomWords from 'random-words';
-import { ADD_WORDS, INC_CURRENT_WORD, INC_CORRECT, WordActionTypes, CALC_WPM, CALC_ACC } from './types';
+import { ADD_WORDS, INC_CURRENT_WORD, INC_CORRECT, WordActionTypes, CALC_WPM, CALC_ACC, START_TIMER, END_TIMER } from './types';
 
 export function generateWords(count: number): WordActionTypes {
   const genWords = randomWords(count)
@@ -41,5 +41,19 @@ export function calculateAccuracy(currentWordIndex: number, correct: number): Wo
   return {
     type: CALC_ACC,
     payload: `${accuracy}` // change from 1 to calculation performed before the return
+  }
+}
+
+export function setStartTimer ( timerStart: Date ): WordActionTypes {
+  return {
+    type: START_TIMER,
+    payload: timerStart 
+  }
+}
+
+export function setEndTimer ( timerEnd: Date ): WordActionTypes {
+  return {
+    type: END_TIMER,
+    payload: timerEnd
   }
 }
