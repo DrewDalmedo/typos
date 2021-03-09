@@ -28,11 +28,11 @@ export function incrementCorrect(): WordActionTypes {
   }
 }
 
+// time is in minutes 
 export function calculateWPM(wordCount: number, time: number): WordActionTypes {
-
   return {
     type: CALC_WPM,
-    payload: `${1}` // change from 1 to calculation performed before the return
+    payload: `${ ( (wordCount / 5) / time ).toFixed(2) }` 
   }
 }
 
@@ -40,18 +40,18 @@ export function calculateAccuracy(currentWordIndex: number, correct: number): Wo
   const accuracy = (correct / (currentWordIndex+1)) * 100;
   return {
     type: CALC_ACC,
-    payload: `${accuracy}` // change from 1 to calculation performed before the return
+    payload: `${accuracy.toFixed(2)}` // change from 1 to calculation performed before the return
   }
 }
 
-export function setStartTimer ( timerStart: Date ): WordActionTypes {
+export function setStartTimer ( timerStart: string ): WordActionTypes {
   return {
     type: START_TIMER,
     payload: timerStart 
   }
 }
 
-export function setEndTimer ( timerEnd: Date ): WordActionTypes {
+export function setEndTimer ( timerEnd: string ): WordActionTypes {
   return {
     type: END_TIMER,
     payload: timerEnd
