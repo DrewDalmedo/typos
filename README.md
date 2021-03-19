@@ -1,5 +1,5 @@
-# [typos.web.app](typos-drewdalmedo.web.app)
-A [typings.gg](typings.gg) clone, written in React.js and TypeScript.
+# [typos.web.app](https://typos-drewdalmedo.web.app)
+A [typings.gg](https://typings.gg) clone, written in React.js and TypeScript.
 
 # About
 Typos is a web app designed to help users test, practice, and improve their writing speeds and accuracies. Users can generate a list of random words, type those words in the given input box, and see their speed and accuracy after completing the list.
@@ -7,7 +7,7 @@ Typos is a web app designed to help users test, practice, and improve their writ
 This web app primarily uses React.js along with TypeScript. 
 
 # Usage
-There are two ways of accessing the app: you can either view the public website [here](typos-drewdalmedo.web.app), or spin up a local development server.
+There are two ways of accessing the app: you can either view the public website [here](https://typos-drewdalmedo.web.app), or spin up a local development server.
 
 To spin up a development server, follow the below steps:
 
